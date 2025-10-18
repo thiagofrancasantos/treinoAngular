@@ -1,0 +1,42 @@
+<div class="card-container">
+  <mat-card class="card-content">
+    <div class="example-container">
+      <mat-form-field>
+        <mat-label>Valor</mat-label>
+        <input matInput maxlength="10" (input)="onInput($event)" />
+      </mat-form-field>
+
+      <mat-form-field class="campo-moeda">
+        <mat-label>De</mat-label>
+        <mat-select
+          [value]="moedaDe()"
+          (selectionChange)="moedaDe.set($event.value)"
+        >
+          <mat-option *ngFor="let m of moedas" [value]="m">{{ m }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <span class="inverter-moeda" (click)="inverterMoedas()">
+        <mat-icon>swap_horiz</mat-icon>
+      </span>
+
+      <mat-form-field>
+        <mat-label>Para</mat-label>
+        <mat-select
+          [value]="moedaPara()"
+          (selectionChange)="moedaPara.set($event.value)"
+        >
+          <mat-option *ngFor="let m of moedas" [value]="m">{{ m }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" (click)="converter()">
+        Converter
+      </button>
+
+      <div *ngIf="resultado() !== null" class="resultado">
+        Resultado: {{ resultado() }} {{ moedaPara() }}
+      </div>
+    </div>
+  </mat-card>
+</div>

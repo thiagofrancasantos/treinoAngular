@@ -1,0 +1,77 @@
+<div class="d-flex position-relative">
+  <!-- Sidebar -->
+  <div
+    id="sidebar"
+    class="bg-dark text-white vh-100 p-2 sidebar-transition position-relative"
+    [class.sidebar-collapsed]="isCollapsed"
+  >
+    <!-- Cabeçalho com botão de fechar -->
+    <div
+      class="d-flex justify-content-between align-items-center mb-3"
+      [class.justify-content-center]="isCollapsed"
+    >
+      <h5 class="mb-0" [class.d-none]="isCollapsed">Menu</h5>
+      <div [class.d-none]="isCollapsed"></div>
+    </div>
+
+    <!-- Itens do menu -->
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a
+          class="nav-link text-white d-flex align-items-center py-2 rounded hover-item justify-content-center"
+          href="#"
+        >
+          <i class="bi bi-speedometer2"></i>
+          <span [class.d-none]="isCollapsed" class="ms-2">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-white d-flex align-items-center py-2 rounded hover-item justify-content-center"
+          href="#"
+        >
+          <i class="bi bi-people"></i>
+          <span [class.d-none]="isCollapsed" class="ms-2">Usuários</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-white d-flex align-items-center py-2 rounded hover-item justify-content-center"
+          href="#"
+        >
+          <i class="bi bi-graph-up"></i>
+          <span [class.d-none]="isCollapsed" class="ms-2">Relatórios</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-white d-flex align-items-center py-2 rounded hover-item justify-content-center"
+          href="#"
+        >
+          <i class="bi bi-gear"></i>
+          <span [class.d-none]="isCollapsed" class="ms-2">Configurações</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Botão flutuante no topo -->
+  <button
+    (click)="toggleSidebar()"
+    class="btn btn-circle toggle-floating position-absolute"
+    [class.toggle-collapsed]="isCollapsed"
+    [attr.aria-label]="isCollapsed ? 'Expandir menu' : 'Recolher menu'"
+  >
+    <i [class]="isCollapsed ? 'bi bi-chevron-right' : 'bi bi-chevron-left'"></i>
+  </button>
+
+  <!-- Conteúdo principal -->
+  <div class="flex-grow-1 p-3 content-area">
+    <h1>Conteúdo Principal</h1>
+    <p>Conteúdo da sua aplicação aqui...</p>
+
+    <button class="btn btn-primary mt-3" (click)="toggleSidebar()">
+      {{ isCollapsed ? "Abrir" : "Fechar" }} Sidebar
+    </button>
+  </div>
+</div>

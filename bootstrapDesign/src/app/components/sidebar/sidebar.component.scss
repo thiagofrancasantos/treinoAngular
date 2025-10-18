@@ -1,0 +1,116 @@
+/* Sidebar base */
+.sidebar-transition {
+  width: 140px; /* Sidebar mais fina */
+  background-color: #212529 !important;
+  padding: 0.8rem 0.4rem !important;
+  transition: width 0.3s ease;
+}
+
+/* Cabeçalho */
+.sidebar-transition h5 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  margin-left: 6px;
+  text-align: left;
+}
+
+/* Itens do menu */
+.nav-item {
+  margin-bottom: 2px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: #f8f9fa;
+  font-size: 0.82rem; /* fonte reduzida */
+  font-weight: 400;
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem !important;
+  transition: all 0.2s ease;
+
+  i {
+    flex-shrink: 0;
+    width: 18px; /* garante alinhamento fixo dos ícones */
+    text-align: center;
+    font-size: 0.95rem;
+    margin-right: 2px; /* aproxima o texto */
+  }
+
+  span {
+    display: inline-block;
+    line-height: 1;
+  }
+
+  &:hover {
+    background-color: #495057 !important;
+    transform: translateX(2px);
+  }
+}
+
+/* Sidebar colapsada */
+.sidebar-collapsed {
+  width: 50px !important;
+
+  .nav-link {
+    justify-content: center;
+    padding: 0.5rem 0.3rem !important;
+
+    i {
+      margin: 0 !important;
+    }
+
+    span {
+      display: none !important;
+    }
+  }
+
+  h5 {
+    display: none;
+  }
+}
+
+/* Botão flutuante */
+.toggle-floating {
+  position: absolute;
+  top: 14px;
+  left: 135px; /* encosta certinho na sidebar */
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #343a40;
+  border: 1px solid #343a40;
+  color: #fff;
+  font-size: 0.75rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #495057;
+    transform: scale(1.1);
+  }
+}
+
+/* Corrige posição quando colapsado */
+.toggle-collapsed {
+  left: 48px !important;
+}
+
+/* Área de conteúdo */
+.content-area {
+  transition: margin-left 0.3s ease;
+  padding: 1rem;
+}
+
+/* Anima conteúdo principal acompanhando sidebar */
+.sidebar-transition ~ .content-area {
+  margin-left: 140px;
+}
+
+.sidebar-collapsed ~ .content-area {
+  margin-left: 50px;
+}
