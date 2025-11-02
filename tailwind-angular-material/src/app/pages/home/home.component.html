@@ -1,1 +1,79 @@
-<p>home works!</p>
+<div class="grid grid-cols-4 grid-rows-4 gap-3 m-4">
+  <div class="bg-white p-6 rounded-xl shadow-md h-40 hover:shadow-lg">
+    <h2 class="text-gray-800 text-2xl font-semibold mb-2 text-center">
+      Total Movements
+    </h2>
+    <p class="text-4xl font-bold text-gray-600 text-center">15,000</p>
+    <p class="text-sm text-green-500 mt-1 text-center">+3.8 vs last quarter</p>
+  </div>
+
+  <div class="bg-white p-6 rounded-xl shadow-md h-40 hover:shadow-lg">
+    <h2 class="text-gray-800 text-2xl font-semibold mb-2 text-center">
+      Active Accounts
+    </h2>
+    <p class="text-4xl font-bold text-indigo-600 text-center">1,200</p>
+    <p class="text-sm text-green-500 mt-1 text-center">+3.8 vs last quarter</p>
+  </div>
+
+  <div class="bg-white p-6 rounded-xl shadow-md h-40 hover:shadow-lg">
+    <h2 class="text-gray-800 text-2xl font-semibold mb-2 text-center">
+      Total Movements
+    </h2>
+    <p class="text-4xl font-bold text-gray-600 text-center">15,000</p>
+    <p class="text-sm text-green-500 mt-1 text-center">+3.8 vs last quarter</p>
+  </div>
+
+  <div class="bg-white p-6 rounded-xl shadow-md h-40 hover:shadow-lg">
+    <h2 class="text-gray-800 text-2xl font-semibold mb-2 text-center">
+      Active Accounts
+    </h2>
+    <p class="text-4xl font-bold text-indigo-600 text-center">1,200</p>
+    <p class="text-sm text-green-500 mt-1 text-center">+3.8 vs last quarter</p>
+  </div>
+
+  <div
+    class="bg-white p-6 col-span-4 row-span-3 rounded-xl shadow-md h-150 hover:shadow-lg text-center"
+  >
+    <h2 class="text-gray-800 text-2xl font-semibold mb-4">
+      Quantidade de Movimentos por Centro de Custo
+    </h2>
+    <div class="flex items-center justify-between mb-4 mt-5">
+      <input
+        type="text"
+        placeholder="Pesquisar..."
+        class="px-4 py-2 w-74 rounded-lg border border-gray-400 focus:ring-blue-800 focus:outline-none"
+      />
+    </div>
+
+    <div
+      class="overflow-x-auto rounded-xl shadow-lg border border-gray-200 mt-5"
+    >
+      <table class="min-w-full text-sm text-center text-gray-700">
+        <thead
+          class="bg-gray-100 text-gray-900 uppercase text-xs font-semibold"
+        >
+          <tr>
+            <th class="px-4 py-3">Name</th>
+            <th class="px-4 py-3">CostE</th>
+            <th class="px-4 py-3">Date</th>
+            <th class="px-4 py-3">Order Text</th>
+            <th class="px-4 py-3">Purchase Doc</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr
+            *ngFor="let item of data"
+            class="border-b hover:bg-gray-100 transiction"
+          >
+            <td class="px-4 py-3">{{ item.name }}</td>
+            <td class="px-4 py-3">{{ item.costE }}</td>
+            <td class="px-4 py-3">{{ item.date }}</td>
+            <td class="px-4 py-3">{{ item.orderText }}</td>
+            <td class="px-4 py-3">{{ item.purchaseDoc }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

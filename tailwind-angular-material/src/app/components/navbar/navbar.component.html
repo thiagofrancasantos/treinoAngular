@@ -1,11 +1,27 @@
 <nav
-  class="bg-gray-800 text-white flex justify-between items-center px-6 py-3 shadow-md"
+  class="bg-gray-800 text-white flex justify-space items-start px-6 py-4 shadow-md"
 >
-  <div class="text-lg font-semibold tracking-wide">MinhaApp</div>
+  <button class="px-4 py-2">
+    <div class="text-xl font-semibold tracking-wide mr-7">RussttyApp</div>
+  </button>
 
   <ul class="flex space-x-6">
-    <li><a href="#" class="hover:text-gray-300 transition">Home</a></li>
-    <li><a href="#" class="hover:text-gray-300 transition">Sobre</a></li>
-    <li><a href="#" class="hover:text-gray-300 transition">Contato</a></li>
+    <button
+      (click)="goToHome()"
+      class="px-4 py-2 bg-gray-800 rounded hover:bg-gray-700 transition"
+    >
+      <li>
+        <a class="hover:text-gray-300 transition">Home</a>
+      </li>
+    </button>
+    <button class="px-4 py-2 bg-gray-800 rounded hover:bg-gray-700 transition">
+      <li><a href="#" class="hover:text-gray-300 transition">Sobre</a></li>
+    </button>
+    <button
+      (click)="goToReport()"
+      class="px-4 py-2 bg-gray-800 rounded hover:bg-gray-700 transition"
+    >
+      <li><a class="hover:text-gray-300 transition">Report</a></li>
+    </button>
   </ul>
 </nav>
