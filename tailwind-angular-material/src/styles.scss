@@ -1,17 +1,1 @@
-/* Importações do Tailwind */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Tema do Angular Material (vai aqui se quiser customizar mais tarde) */
-
-/* Estilos globais padrão do Angular */
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+@import "tailwindcss";
